@@ -1,6 +1,7 @@
 package("hashmap_c_library")
     set_description("The hashmap_c_library package")
 
+
     add_configs("shared", {description = "Build shared library.", default = false, type = "boolean", readonly = true})
 
     on_load(function (package)
@@ -13,6 +14,6 @@ package("hashmap_c_library")
         result.links = "hashmap_c_library"
         result.linkdirs = package:installdir("lib")
         result.includedirs = package:installdir("include")
-        result.libfiles = path.join(package:installdir(libfiledir), "hashmap_c_library.lib")
+        result.libfiles = path.join(package:installdir(libfiledir), "libhashmap_c_library.a")
         return result
     end)
